@@ -1,6 +1,6 @@
 export default function NavBar() {
   return (
-    <header className=" items-center font-segoe-ui text-2xl font-semibold text-black mx-[219px] bg-white  p-4">
+    <header className=" items-center font-segoe-ui text-2xl font-semibold text-black mx-[85px] bg-white  p-4">
       <div className=" mx-auto flex items-center h-30 justify-between">
         <div className="text-black font-bold text-2xl">My Tinerary</div>
         <nav className="flex items-center space-x-4">
