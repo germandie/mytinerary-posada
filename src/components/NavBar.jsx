@@ -1,8 +1,32 @@
 export default function NavBar() {
   return (
-    <header className=" items-center font-segoe-ui text-2xl font-semibold text-black mx-[85px] bg-white  p-4">
-      <div className=" mx-auto flex items-center h-30 justify-between">
-        <div className="text-black font-bold text-2xl">My Tinerary</div>
+    
+    <header className="flex items-center font-segoe-ui  font-semibold text-black mx-[40px] bg-white  p-4">
+      
+      <div className= "flex">
+      <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth={1.5}
+          stroke="currentColor"
+          className="w-8 h-8"
+          onClick={()=>setShow(!show)}
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+          />
+        </svg>
+        <div className="text-black font-bold text-2xl ml-3">My Tinerary</div>
+      </div>
+
+      
+      <div className="mx-auto flex items-center h-30 justify-between">
+        
+
+        
         <nav className="flex items-center space-x-4">
           <a
             href="#"
