@@ -6,5 +6,5 @@ export default function CardPolaroid({src, alt, text}) {
             <img src={src} alt={alt} />
             <p className="text-base">{text}</p>
           </div>
-  )
+    )
 }
