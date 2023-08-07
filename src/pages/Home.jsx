@@ -31,7 +31,9 @@ export default function Home() {
     },
   ];
   return (
+    
     <main className="flex justify-center items-center mx-[219px]">
+      
       <div className="w-[1291px] h-[304px] flex justify-between p-4 mt-[318px] mb-[399px]">
         <div className="flex flex-col w-[742px] h-[304px]">
           <h1 className="text-[48px] font-semibold h-[64px] font-[700] leading-[63.84px]">

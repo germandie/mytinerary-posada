@@ -1,17 +1,19 @@
+import { useState } from "react";
+
 export default function NavBar() {
+  let [show, setShow] = useState(false);
+
   return (
-    
-    <header className="flex items-center font-segoe-ui  font-semibold text-black mx-[40px] bg-white  p-4">
+    <header className="h-[87px] px-12 flex justify-start items-center">
       
-      <div className= "flex">
-      <svg
+        <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
           strokeWidth={1.5}
           stroke="currentColor"
-          className="w-8 h-8"
-          onClick={()=>setShow(!show)}
+          className="w-8 h-8 cursor-pointer"
+          onClick={() => setShow(!show)}
         >
           <path
             strokeLinecap="round"
@@ -19,15 +21,8 @@ export default function NavBar() {
             d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
           />
         </svg>
-        <div className="text-black font-bold text-2xl ml-3">My Tinerary</div>
-      </div>
-
-      
-      <div className="mx-auto flex items-center h-30 justify-between">
-        
-
-        
-        <nav className="flex items-center space-x-4">
+        {show?(
+          <nav className="flex items-center space-x-4 mx-auto h-30 justify-between">
           <a
             href="#"
             className="font-segoe-ui text-black text-lg font-semibold leading-8"
@@ -56,7 +51,15 @@ export default function NavBar() {
             <span>Login</span>
           </button>
 
-          <svg
+          
+        </nav>
+        ) : (null)}
+
+      {<div className="text-black font-bold text-2xl ml-3">My Tinerary</div>}
+
+      
+        
+        <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
@@ -70,8 +73,10 @@ export default function NavBar() {
               d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"
             />
           </svg>
-        </nav>
-      </div>
+        
+
+        
+      
     </header>
   );
 }

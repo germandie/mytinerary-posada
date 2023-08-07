@@ -1,4 +1,4 @@
-export default function Arrow({direction}) {
+export default function Arrow({direction,onClick}) {
     
   return (
     <svg
@@ -7,7 +7,8 @@ export default function Arrow({direction}) {
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="currentColor"
-      className="w-9 h-9"
+      className="w-9 h-9 cursor-pointer"
+      onClick={onClick}
     >
       <path
         strokeLinecap="round"
