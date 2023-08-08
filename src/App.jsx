@@ -1,15 +1,10 @@
-import Home from "./pages/Home"
-import MainLayouts from "./layouts/MainLayouts"
-
+import { RouterProvider } from 'react-router-dom'
+import router from "./router";
 
 function App() {
-  
-
   return (
-    <MainLayouts>
-      <Home />
-    </MainLayouts>
-  );
+    <RouterProvider router={router} />
+  )
 }
 
 export default App;
