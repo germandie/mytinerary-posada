@@ -32,12 +32,12 @@ export default function Carousel({data}) {
     console.log(counterTo);
   }
   
-  return (
+  /* return (
     <div className="flex justify-center items-center">
           <div className="flex-none">
             <Arrow direction="M15.75 19.5L8.25 12l7.5-7.5" onClick={prev_slide}/>
           </div>
-          <div className="flex flex-wrap h-[304px] rounded-md bg-black">
+          <div className="flex flex-wrap justify-center h-[304px] rounded-md bg-black">
             {data.slice(counter,counterTo).map((each) => (
               <CardPolaroid
                 key={each.id}
@@ -48,8 +48,29 @@ export default function Carousel({data}) {
             ))}
           </div>
           <div className="flex-none">
+            
             <Arrow direction="M8.25 4.5l7.5 7.5-7.5 7.5" onClick={next_slide} />
           </div>
         </div>
+  ) */
+
+  return (
+    <div className="flex flex-col justify-center items-center">
+      <div className="flex flex-wrap justify-center h-[304px] rounded-md bg-red-100 mb-4">
+        {data.slice(counter, counterTo).map((each) => (
+          <CardPolaroid
+            key={each.id}
+            src={each.photo}
+            alt={each.id}
+            text={each.city}
+          />
+        ))}
+      </div>
+      <div className="flex items-center space-x-20">
+        <Arrow direction="M15.75 19.5L8.25 12l7.5-7.5" onClick={prev_slide} />
+        <Arrow direction="M8.25 4.5l7.5 7.5-7.5 7.5" onClick={next_slide} />
+      </div>
+    </div>
   )
+  
 }
