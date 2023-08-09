@@ -3,7 +3,7 @@
 export default function Footer() {
   
   return (
-    <footer className="h-[10vw] bg-gray-800 flex justify-center items-center">
+    <footer className="w-full h-[10vw] bg-gray-800 flex justify-center ">
       <div className="m-auto">
         <img className="w-[13vw]" src="./public/img/whitelogo.png" alt="logoMyItinerary" />
         <a href="URL_del_destino">
