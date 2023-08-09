@@ -81,7 +81,7 @@ export default function NavBar() {
   let [show, setShow] = useState(false);
 
   return (
-    <header className="h-[87px] px-12 flex justify-between items-center bg-blue-300">
+    <header className="h-[87px] px-12 flex justify-between items-center bg-white">
       <div className="flex items-center">
         <svg
           xmlns="http://www.w3.org/2000/svg"

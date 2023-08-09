@@ -56,7 +56,7 @@ export default function Carousel({data}) {
 
   return (
     <div className="flex flex-col justify-center items-center ">
-      <div className="flex flex-wrap justify-center max-w-[100%] h-[50vw] rounded-md bg-red-500 mb-5 ">
+      <div className="flex flex-wrap justify-center max-w-[100%] h-[50vw] rounded-md mb-5 ">
         {data.slice(counter, counterTo).map((each) => (
           <CardPolaroid
             key={each.id}
