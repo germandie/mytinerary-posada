@@ -35,30 +35,17 @@ export default function NavBar() {
 
       {show ? (
         <nav className=" space-x-3 ml-[0vw] mx-auto  h-30 flex flex-col ">
-          {/* <Anchor
-            to="/home"
-            className="font-segoe-ui text-black text-lg font-[700] leading-8"
-          >
-            Home
-          </Anchor>
-
-          <Anchor
-            to="/cities"
-            className=" font-segoe-ui text-black text-lg font-[700] leading-8"
-          >
-            Cities
           
-          </Anchor> */}
-          <div className="font-segoe-ui text-black text-[10px] font-[500] leading-5 m-auto flex flex-col mb-0">
+          <div className="font-segoe-ui text-black text-[12px] font-[500] leading-5 m-auto flex flex-col mb-0">
           {options.map(each=><Anchor key={each.to} to={each.to}>{each.title}</Anchor>)}
           </div>
 
-          <button className="flex items-center space-x-1 w-[14vw] h-[50px] px-1 bg-[#4F46E5] hover:bg-[#473fde] text-white text-[10px] font-[500] rounded-md h-full m">
+          <button className="flex items-center space-x-1 w-[18vw] h-[50px] px-1 bg-[#4F46E5] hover:bg-[#473fde] text-white text-[12px] font-[500] rounded-md h-full m">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               fill="currentColor"
-              className="w-8 h-4"
+              className="w-4 h-4"
             >
               <path
                 fillRule="evenodd"

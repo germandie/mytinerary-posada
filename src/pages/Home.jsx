@@ -62,12 +62,8 @@ export default function Home() {
     <Carousel data={data} />
   </div>
 
-  {/* Agregar los elementos en columna */}
-  <div className="flex flex-col items-center mt-4">
-    <a href="#" className="text-blue-500">Home</a>
-    <a href="#" className="text-blue-500">Cities</a>
-    <button className="bg-blue-500 text-white py-1 px-2 rounded mt-2">Login</button>
-  </div>
+  
+  
 </div>
 </main>
 
