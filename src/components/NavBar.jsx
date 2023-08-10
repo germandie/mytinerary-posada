@@ -12,7 +12,9 @@ export default function NavBar() {
   ]
 
   return (
-    <header className="h-[87px] px-12 flex justify-start items-center bg-blue-200">
+    <header className="h-[87px] px-12 flex justify-start items-center bg-blue-200 
+    md:h-[87px] md:px-12 md:flex md:justify-between md:items-center md:bg-gray-400
+    lg:flex lg:justify-center lg:items-center">
       {
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -20,7 +22,7 @@ export default function NavBar() {
           viewBox="0 0 24 24"
           strokeWidth={1.5}
           stroke="currentColor"
-          className="w-8 h-8 cursor-pointer"
+          className="w-8 h-8 cursor-pointer md:cursor-pointer"
           onClick={() => setShow(!show)}
         >
           <path
@@ -31,16 +33,28 @@ export default function NavBar() {
         </svg>
       }
 
-      <div className=" text-black font-[700] text-[16px] ml-2 ">My Tinerary</div>
+      <div className=" text-black font-[700] text-[20px] ml-2
+      md:text-black md:font-[700] md:text-3xl md:ml-3
+       ">My Tinerary</div>
 
       {show ? (
-        <nav className=" space-x-3 ml-[0vw] mx-auto  h-30 flex flex-col ">
+        <nav className=" space-x-3 ml-[0vw] mx-auto  h-30 flex flex-col
+        space-x-4 ml-0 
+        md:space-x-4 md:flex-row md:items-center md:justify-between md:m-auto
+        lg:space-x-5
+        ">
           
-          <div className="font-segoe-ui text-black text-[12px] font-[500] leading-5 m-auto flex flex-col mb-0">
+          <div className="font-segoe-ui text-black text-[14px] font-[500] leading-5  flex flex-col mb-0
+
+          md: font-segoe-ui md:text-black md:text-lg md:font-[700] md:leading-8
+          md:flex-row md:items-center md:justify-between md:space-x-4
+          lg:ml-80
+          ">
           {options.map(each=><Anchor key={each.to} to={each.to}>{each.title}</Anchor>)}
           </div>
 
-          <button className="flex items-center space-x-1 w-[18vw] h-[50px] px-1 bg-[#4F46E5] hover:bg-[#473fde] text-white text-[12px] font-[500] rounded-md h-full m">
+          <button className="flex items-center justify-center space-x-2  w-[100px] h-[50px] px-2 bg-[#4F46E5] hover:bg-[#473fde] text-white text-[14px] font-[500] rounded-md h-full   
+          lg:text-[18px] lg:h-[40px] lg:mt-auto lg:flex lg:items-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"

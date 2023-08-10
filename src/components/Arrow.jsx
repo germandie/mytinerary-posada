@@ -7,7 +7,7 @@ export default function Arrow({direction,onClick}) {
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="currentColor"
-      className="w-6 h-6 cursor-pointer mt-3"
+      className="w-6 h-6 cursor-pointer mt-3 lg:space-x-12"
       onClick={onClick}
     >
       <path
