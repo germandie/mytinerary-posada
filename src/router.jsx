@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom"
 import Home from "./pages/Home"
 import Cities from "./pages/Cities"
-import MainLayouts from "./layouts/MainLayouts";
+import MainLayouts from "./layouts/MainLayouts"
 
 
 
@@ -18,8 +18,10 @@ const router = createBrowserRouter([
     ],
   },
  
-
+  
   
 ]);
+
+
 
 export default router;

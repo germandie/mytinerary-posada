@@ -54,7 +54,7 @@ export default function Carousel({data}) {
         </div>
   ) */
 
-  return (
+  /* return (
     
     <div className="flex flex-col justify-center items-center
     lg:flex lg:justify-center lg:items-center
@@ -82,6 +82,25 @@ export default function Carousel({data}) {
         <Arrow direction="M8.25 4.5l7.5 7.5-7.5 7.5" onClick={next_slide} />
       </div> 
     </div>
-  )
   
+  ) */
+
+  return (
+    <div className="flex justify-center items-center hidden sm:flex">
+      <Arrow direction="M15.75 19.5L8.25 12l7.5-7.5" onClick={prev_slide} />
+      <div className="flex w-11/12 flex-wrap justify-center mt-5">
+        {data.slice(counter, counterTo).map((each, index) => (
+          <CardPolaroid
+            key={index}
+            src={each.photo}
+            alt={each.id}
+            text={each.city}
+            id={each.id}
+          />
+        ))}
+      </div>
+      <Arrow direction="M8.25 4.5l7.5 7.5-7.5 7.5" onClick={next_slide} />
+    </div>
+  );
+        
 }
