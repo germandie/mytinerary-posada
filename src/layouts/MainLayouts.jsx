@@ -4,8 +4,8 @@ import { Outlet } from "react-router-dom"
 
 export default function MainLayouts() {
   return (
-    <div className="w-[full] min-h-screen m-auto
-    sm: bg-gray
+    <div className="w-full min-h-screen m-auto
+    sm: bg-gray-300
     md: bg-gray
     lg:bg-gray">
     < NavBar/>

@@ -12,8 +12,8 @@ export default function NavBar() {
   ]
 
   return (
-    <header className="h-[87px] px-12 flex justify-start items-center bg-blue-200 
-    md:h-[87px] md:px-12 md:flex md:justify-between md:items-center md:bg-gray-400
+    <header className="h-[87px] px-12 flex  items-center bg-gray-500 mb-7
+    md:h-[87px] md:px-12 md:flex md:justify-between md:items-center md:bg-gray-500
     lg:flex lg:justify-center lg:items-center">
       {
         <svg
@@ -53,7 +53,7 @@ export default function NavBar() {
           {options.map(each=><Anchor key={each.to} to={each.to}>{each.title}</Anchor>)}
           </div>
 
-          <button className="flex items-center justify-center space-x-2  w-[100px] h-[50px] px-2 bg-[#4F46E5] hover:bg-[#473fde] text-white text-[14px] font-[500] rounded-md h-full   
+          <button className="flex items-center justify-center space-x-2  w-[100px]  px-2 bg-[#4F46E5] hover:bg-[#473fde] text-white text-[14px] font-[500] rounded-md h-full   
           lg:text-[18px] lg:h-[40px] lg:mt-auto lg:flex lg:items-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
