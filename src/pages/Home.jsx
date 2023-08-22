@@ -26,15 +26,15 @@ export default function Home() {
     
    
 
-<main className="flex justify-items-center bg-gray-300 w-full 
+<main className="flex items-center bg-gray-300 
 lg:w-[100%] 
 lg:">
   
   
-  <div className="w-full max-w-[1291px] px-[2vw] mt-[17rem] mb-[25vw] space-x-4 flex flex-col md:flex-row lg:flex-row lg:justify-between ">
+  <div className="w-full max-w-[1291px] px-[2vw] mt-[3rem] mb-[3rem] space-x-4 flex flex-col md:flex-row lg:flex-row lg:justify-between ">
   
-    <div className="w-full md:w-[60%] lg:w-[50%] flex flex-col items-center justify-center px-4 mt-8 space-y-4
-    lg: pb-8 lg:space-y-12">
+    <div className="w-full md:w-[60%] lg:w-[50%] flex flex-col items-center px-4 mt-8 space-y-4
+    lg:pb-8 lg:space-y-12">
     <h1 className="text-3xl font-bold text-center lg:m-auto">Popular Mytineraries</h1>
       <div className="w-full">
         <div className="flex-col w-full items-center">
@@ -46,16 +46,21 @@ lg:">
             an easy-to-use interface and a host of itinerary options, planning
             your next trip has never been easier.
           </p>
-          <ViewMore />
+          
+          <div className="flex items-center justify-center">
+                    <ViewMore />
+                </div>
+                <Carousel data={data} />
         </div>
       </div>
     </div>
-    <div className="w-full md:w-[40%] lg:w-[50%]">
-      
-      
-     
+    
+    
+    {/* <div className="w-full 
+    md:w-[40%] 
+    lg:w-[50%]">
       <Carousel data={data} />
-    </div>
+    </div> */}
   </div>
 </main>
 

@@ -22,7 +22,8 @@ export default function NavBar() {
           viewBox="0 0 24 24"
           strokeWidth={1.5}
           stroke="currentColor"
-          className="w-8 h-8 cursor-pointer md:cursor-pointer"
+          className="w-8 h-8 cursor-pointer md:cursor-pointer
+          md:hidden"
           onClick={() => setShow(!show)}
         >
           <path
@@ -38,13 +39,13 @@ export default function NavBar() {
        ">My Tinerary</div>
 
       {show ? (
-        <nav className=" space-x-3 ml-[0vw] mx-auto  h-30 flex flex-col
-        space-x-4 ml-0 
-        md:space-x-4 md:flex-row md:items-center md:justify-between md:m-auto
-        lg:space-x-5
-        ">
+        <nav className=" mx-auto  h-30 flex flex-col 
           
-          <div className="font-segoe-ui text-black text-[14px] font-[500] leading-5  flex flex-col mb-0
+         md:space-x-4 md:flex-row md:items-center md:justify-between md:m-auto
+         lg:space-x-5
+         ">
+          
+          <div className="font-segoe-ui text-black text-[14px] font-[500] leading-5  flex items-center flex-col mb-0 
 
           md: font-segoe-ui md:text-black md:text-lg md:font-[700] md:leading-8
           md:flex-row md:items-center md:justify-between md:space-x-4
@@ -53,7 +54,7 @@ export default function NavBar() {
           {options.map(each=><Anchor key={each.to} to={each.to}>{each.title}</Anchor>)}
           </div>
 
-          <button className="flex items-center justify-center space-x-2  w-[100px]  px-2 bg-[#4F46E5] hover:bg-[#473fde] text-white text-[14px] font-[500] rounded-md h-full   
+          <button className="flex items-center justify-center space-x-2   px-2 bg-[#4F46E5] hover:bg-[#473fde] text-white text-[14px] font-[500] rounded-md h-full   
           lg:text-[18px] lg:h-[40px] lg:mt-auto lg:flex lg:items-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
