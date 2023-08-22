@@ -12,7 +12,7 @@ export default function NavBar() {
   ]
 
   return (
-    <header className="h-[87px] px-12 flex  items-center bg-gray-500 mb-7
+    <header className="h-[87px] px-12 flex  items-center bg-gray-500 
     md:h-[87px] md:px-12 md:flex md:justify-between md:items-center md:bg-gray-500
     lg:flex lg:justify-center lg:items-center">
       {
@@ -39,22 +39,22 @@ export default function NavBar() {
        ">My Tinerary</div>
 
       {show ? (
-        <nav className=" mx-auto  h-30 flex flex-col 
+        <nav className="  h-30 flex flex-col items-center
           
          md:space-x-4 md:flex-row md:items-center md:justify-between md:m-auto
-         lg:space-x-5
+         lg:flex lg:space-x-5
          ">
           
           <div className="font-segoe-ui text-black text-[14px] font-[500] leading-5  flex items-center flex-col mb-0 
 
           md: font-segoe-ui md:text-black md:text-lg md:font-[700] md:leading-8
           md:flex-row md:items-center md:justify-between md:space-x-4
-          lg:ml-80
+          lg: flex lg:ml-80
           ">
           {options.map(each=><Anchor key={each.to} to={each.to}>{each.title}</Anchor>)}
           </div>
 
-          <button className="flex items-center justify-center space-x-2   px-2 bg-[#4F46E5] hover:bg-[#473fde] text-white text-[14px] font-[500] rounded-md h-full   
+          <button className="flex items-center justify-center space-x-2 w-20 px-2 bg-[#4F46E5] hover:bg-[#473fde] text-white text-[14px] font-[500] rounded-md h-full   
           lg:text-[18px] lg:h-[40px] lg:mt-auto lg:flex lg:items-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -72,6 +72,8 @@ export default function NavBar() {
           </button>
         </nav>
       ) : null}
+
+      
 
       <svg
         xmlns="http://www.w3.org/2000/svg"
