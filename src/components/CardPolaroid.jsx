@@ -6,7 +6,7 @@ export default function CardPolaroid({src, alt, text}) {
 
     md:w-[20vw] md: flex md:flex-col md:items-center md:p-2 md:bg-slate-200 m-2
 
-    lg:flex lg:flex-wrap
+    lg:flex grid lg:grid-cols-2
     ">
             <img className="rounded-md " src={src} alt={alt} />
             <p className="mt-1 text-[3vw] font-segoe-ui font-semibold

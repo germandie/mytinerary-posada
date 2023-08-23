@@ -32,63 +32,14 @@ export default function Carousel({data}) {
     console.log(counterTo);
   }
   
-  /* return (
-    <div className="flex justify-center items-center">
-          <div className="flex-none">
-            <Arrow direction="M15.75 19.5L8.25 12l7.5-7.5" onClick={prev_slide}/>
-          </div>
-          <div className="flex flex-wrap justify-center h-[304px] rounded-md bg-black">
-            {data.slice(counter,counterTo).map((each) => (
-              <CardPolaroid
-                key={each.id}
-                src={each.photo}
-                alt={each.id}
-                text={each.city}
-              />
-            ))}
-          </div>
-          <div className="flex-none">
-            
-            <Arrow direction="M8.25 4.5l7.5 7.5-7.5 7.5" onClick={next_slide} />
-          </div>
-        </div>
-  ) */
-
-  /* return (
-    
-    <div className="flex flex-col justify-center items-center
-    lg:flex lg:justify-center lg:items-center
-     ">
-
-      <div className="flex flex-wrap justify-center max-w-[100%] h-auto rounded-md mb-5 m-auto
-      md: flex md:items-center
-      lg:flex  lg:items-center ">
-      
-        
-        {data.slice(counter, counterTo).map((each) => (
-          <CardPolaroid
-            key={each.id}
-            src={each.photo}
-            alt={each.id}
-            text={each.city}
-          />
-          
-        ))}
-        
-      </div>
-          
-      <div className="flex items-center space-x-40 ">
-        <Arrow direction="M15.75 19.5L8.25 12l7.5-7.5" onClick={prev_slide} />
-        <Arrow direction="M8.25 4.5l7.5 7.5-7.5 7.5" onClick={next_slide} />
-      </div> 
-    </div>
   
-  ) */
 
   return (
-    <div className="flex justify-center items-center hidden sm:flex">
+    <div className="flex justify-center items-center hidden sm:flex ">
       <Arrow direction="M15.75 19.5L8.25 12l7.5-7.5" onClick={prev_slide} />
-      <div className="flex w-11/12 flex-wrap justify-center mt-5">
+      <div className="flex w-11/12 flex-wrap justify-center mt-5
+      md:grid-cols-2
+      gird lg:grid-cols-2">
         {data.slice(counter, counterTo).map((each, index) => (
           <CardPolaroid
             key={index}

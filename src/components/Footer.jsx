@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="w-full h-[10vw] bg-gray-800 flex
     sm: bg-gray-800
     md: bg-gray-800
-    lg:bg-gray-800
+    lg:bg-gray-800 lg:mt[20rem]
     ">
       <div className="flex items-center justify-between space-x-4">
         <img className="w-[22vw] ml-2 lg:w-[10vw]" src="/img/whitelogo.png" alt="logoMyItinerary" />

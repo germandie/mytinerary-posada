@@ -26,48 +26,31 @@ export default function Home() {
     
    
 
-<main className="flex items-center bg-gray-300 
-lg:w-[100%] 
-lg:">
-  
-  
-  <div className="w-full max-w-[1291px] px-[2vw] mt-[3rem] mb-[3rem] space-x-4 flex flex-col md:flex-row lg:flex-row lg:justify-between ">
-  
-    <div className="w-full md:w-[60%] lg:w-[50%] flex flex-col items-center px-4 mt-8 space-y-4
-    lg:pb-8 lg:space-y-12">
-    <h1 className="text-3xl font-bold text-center lg:m-auto">Popular Mytineraries</h1>
-      <div className="w-full">
-        <div className="flex-col w-full items-center">
-          <h2 className="text-2xl font-semibold text-center">
+<main className="flex items-center bg-gray-300 lg:">
+  <div className="w-full max-w-[1291px] px-[2vw] mt-[3rem] mb-[3rem] space-x-4 flex flex-col md:flex-row md:justify-center lg:flex-row lg:justify-between">
+    <div className="w-full md:w-[60%] flex flex-col items-center px-4 mt-8 space-y-4 lg:pb-8 lg:space-y-12">
+      <h1 className="text-3xl font-bold text-center lg:ml-0">Popular Mytineraries</h1>
+      <div className="w-full lg:flex">
+        <div className="lg:w-[50%] lg:ml-4">
+          <h2 className="text-2xl font-semibold text-center lg:w-[38rem]">
             Find your perfect trip, designed by insiders who know and love their cities!
           </h2>
-          <p className="font-semibold text-xl text-[#1C1C1C99] text-center mt-2">
+          <p className="font-semibold text-xl text-[#1C1C1C99] text-center lg:w-[38rem] mt-2">
             Our app will help you find the perfect path for your next trip. With
             an easy-to-use interface and a host of itinerary options, planning
             your next trip has never been easier.
           </p>
-          
-          <div className="flex items-center justify-center">
-                    <ViewMore />
-                </div>
-                <Carousel data={data} />
+          <div className="flex items-center justify-center lg:justify-start mt-4">
+            <ViewMore />
+          </div>
         </div>
       </div>
     </div>
-    
-    
-    {/* <div className="w-full 
-    md:w-[40%] 
-    lg:w-[50%]">
+    <div className="lg:w-[50%] lg:ml-4 mt-4 lg:mt-0 lg:flex ">
       <Carousel data={data} />
-    </div> */}
+    </div>
   </div>
 </main>
 
-
-
-
-
-
-  );
+ );
 }

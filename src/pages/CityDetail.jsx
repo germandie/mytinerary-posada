@@ -1,56 +1,55 @@
-/* import { useParams } from 'react-router-dom'
-
-export default function CityDetail() {
-  const { city_id } = useParams()
-  //este hook se engancha a la URL para evaluar todos los parametros dinamicos que tiene la URL
-  //este hook devuelve un objeto donde cada CLAVE es la ruta dinamica definida en el enrutador
-  //y donde cada VALOR es el valor de la URL
-  return (
-    <div>CityDetail of city {city_id} under construction</div>
-  )
-} */
-
-
-import { useParams } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useParams } from "react-router-dom";
+import { useEffect,useState } from "react";
+import axios from "axios";
 import apiUrl from "../apiUrl";
-
+import { Link as Anchor } from "react-router-dom";
 
 export default function CityDetail() {
-  const { city_id } = useParams();
-  const [city, setCity] = useState(null);
+  const { _id } = useParams();
+  const [city, setCity] = useState([]);
 
-  useEffect(() => {
-    // Utiliza un bloque try...catch para manejar errores de axios
-    try {
-      axios(apiUrl + "cities?city=" + text.current.value)
-        .then((res) => setCities(res.data.response))
-        .catch((err) => {
-          if (err.response && err.response.status === 404) {
-            // Cuando el servidor responde con un 404, muestra el mensaje personalizado
-            setCities([]);
-          } else {
-            // Si hay otro tipo de error, puedes manejarlo aquí
-            console.error(err);
-          }
-        });
-    } catch (error) {
-      console.error(error);
-    }
-  }, [city_id]);
-
+  useEffect(
+    () => {
+      axios(apiUrl + 'cities/' + _id)
+        //.then((resp) => console.log(resp.data.data_carousel))
+        .then(res =>{setCity(res.data.response)
+          })
+        .catch((err) => console.log(err))
+    },
+    [_id] 
+  );
   return (
-    <div className="">
-      {city ? (
-        <>
-          <h1>{city.city}</h1>
-          <p>{city.description}</p>
-        </>
-      ) : (
-        'Cargando...'
-      )}
+    <div>
+      <main className="lg:text-stone-950">
+        <div className="h-[50rem]">
+          <div className="">
+            <h1 className="text-2xl font-semibold text-center lg:w-[38rem]">
+              City Detail {city.text}
+            </h1>
+          </div>
+          <div className="lg:flex lg:justify-center">
+            <img
+              className="w-50 lg:w-[30rem]" 
+              src={city.photo}
+              alt=""
+            />
+          </div>
+          <div className="">
+            {/* Aplica clases específicas para pantallas grandes */}
+            <p className="lg:text-lg lg:font-semibold lg:mb-2 lg:m-20 lg:flex lg:justify-center lg:text-stone-950">{city.city}</p>
+            <p className="lg:text-lg lg:mb-2">{city.featuredDescription}</p>
+            <p className="lg:text-lg">{city.smalldescription}</p>
+          </div>
+          <Anchor to= '/cities'>
+         <button id="buttonAccess" 
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="submit"> Return <i className="bi bi-search"></i>
+         </button> 
+         </Anchor>
+        
+        </div>
+        <div class="font-semibold text-xl text-[black] text-center lg:w-[38rem] mt-2">Under construction</div>
+      </main>
     </div>
   );
+  
 }
-
-

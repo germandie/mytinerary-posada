@@ -30,7 +30,7 @@ export default function CardCity({ src, alt, text, id }) {
     <div className="flex flex-wrap">
 
     <Anchor to={'/city/'+id} className=" flex flex-col items-center p-2 m-4 bg-white rounded-md border border-neutral-400 drop-shadow-[0_35px_35px_rgba(0,0,0,0.20)]">
-      <img className="rounded-md w-[20rem] h-[8rem]" src={src} alt={alt} />
+      <img className="rounded-md w-[20rem] h-[8rem] lg:w-[25rem]" src={src} alt={alt} />
       <p className="text-[15px] font-segoe-ui">{text}</p>
     </Anchor>
     </div>
