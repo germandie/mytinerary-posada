@@ -3,23 +3,33 @@ import Carousel from "../components/Carousel";
 import axios from "axios";
 import ViewMore from "../components/ViewMore";
 import apiUrl from '../apiUrl.js'
+import { useSelector, useDispatch } from "react-redux";
+import city_actions from "../store/actions/cities";
+const { read_carousel } = city_actions
 
 
 export default function Home() {
   const [show,setShow] = useState(true)
-  const [data,setData] = useState([])
   
-    
-
- useEffect(
+  // const store = useSelector(store=>store)
+  // console.log(store);
+  // const city_reducer = useSelector(store=>store.cities)
+  // console.log(city_reducer);
+  const carousel = useSelector(store=>store.cities.carousel)
+  
+  const dispatch = useDispatch()
+  
+  useEffect(
   ()=>{
-    axios(apiUrl+'cities/carousel')
-    .then(res=>setData(res.data.data_carousel))
-    .catch(err=>console.log(err))
+    if(carousel.length===0){
+      dispatch(read_carousel())
+    }
+    
+    
   },
   []
  )
-
+ console.log(carousel);
 
   
   return (
@@ -47,7 +57,7 @@ export default function Home() {
       </div>
     </div>
     <div className="lg:w-[50%] lg:ml-4 mt-4 lg:mt-0 lg:flex ">
-      <Carousel data={data} />
+      <Carousel data={carousel} />
     </div>
   </div>
 </main>
