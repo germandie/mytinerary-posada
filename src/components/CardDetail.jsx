@@ -1,5 +1,9 @@
 import { Link as Anchor } from "react-router-dom";
 import NavBarDetail from "./NavBarDetail";
+import { useEffect, useState } from "react";
+import { useDispatch,useSelector } from "react-redux";
+import itinerary_actions from "../store/actions/itineraries";
+const { read_itineraries_from_city } = itinerary_actions
 
 export default function CardDetail({ src, alt, text, id, p }) {
   // Estilo para el contenedor principal que ocupa toda la página
@@ -15,6 +19,15 @@ export default function CardDetail({ src, alt, text, id, p }) {
     alignItems: "center",
   };
 
+  const [ show,setShow ] = useState(false)
+  const itineraries = useSelector(store=>store.itineraries.itineraries_from_city)
+  console.log(itineraries);
+  const dispatch = useDispatch()
+  useEffect(
+    ()=>{dispatch(read_itineraries_from_city({ city_id:id }))},
+    []
+  )
+
   return (
     <div style={containerStyle}>
       <div className="fixed top-0 w-full p-4">
@@ -28,15 +41,19 @@ export default function CardDetail({ src, alt, text, id, p }) {
         {p}{" "}
       </p>
       
-        <Anchor to={"/city/" + id} className="text-white">
+        <div className="flex flex-col ">
+        <Anchor to={"/city/"+id} className="w-[300px] text-white flex flex-col">
           <button
             className=" w-auto h-auto px-8 bg-[#4F46E5] hover:bg-[#473fde] text-white text-lg font-semibold rounded-md mt-3  ml-5
              md:w-40  md:h-[8vw] 
              lg:w-[17vw] lg:h-[4vw] lg:m-auto lg:mt-4"
           >
-            <span className="text-[16px]">View Itineraries</span>
+            <span onClick={()=>setShow(!show)} className="text-[16px]">{show ? ('Hide') : ('View Itineraries')}</span>
+            
           </button>
+          {show && itineraries.map(each=> <p key={each._id}>{each.name}</p> )}
         </Anchor>
+        </div>
       
     </div>
   );

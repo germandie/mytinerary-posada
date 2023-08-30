@@ -21,7 +21,7 @@ export default function CityDetail() {
       src={city.photo}
       alt={city._id}
       text={city.city}
-      id={city._id}
+      id={city_id}
       p={city.description}
     />
     </div>
