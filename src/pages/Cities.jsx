@@ -27,7 +27,7 @@ export default function Cities() {
 
   return (
     <>
-      <div className="flex items-center justify-center">
+      <div className="flex items-center justify-center xl:mb-4">
         <div className="mx-auto mt-4 relative">
           <input
             ref={text}
@@ -35,7 +35,8 @@ export default function Cities() {
             name="text"
             id="text"
             onKeyUp={handlerFilter}
-            className="pl-10 py-2 pr-4 rounded-full bg-gray-100 focus:outline-none focus:ring focus:border-blue-300"
+            className="pl-10 py-2 pr-4 rounded-full bg-gray-100 focus:outline-none focus:ring focus:border-blue-300
+            xl:"
             placeholder="Search your city"
           />
           <span className="absolute left-3 top-2 text-gray-400">
@@ -47,14 +48,14 @@ export default function Cities() {
       </div>
 
       {cities.length === 0 ? (
-        <div className="text-center text-gray-500 mt-4">
+        <div className="h-full text-center text-gray-500 mt-4">
           Not found city, please type another
         </div>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 
         md:grid-cols-3 
         lg:grid-cols-3 
-        xl:grid-cols-5 ">
+        xl:grid-cols-5 bg-[#4E4452]">
           {cities.map((each) => (
             <CardCity
               key={each._id}

@@ -9,7 +9,10 @@ export default function NavBar() {
    ]
 
   return (
-    <header className="h-[87px] px-12 flex items-center md:h-[87px] md:px-12 md:flex md:justify-between md:items-center lg:flex lg:justify-center lg:items-center">
+    <header className="mt-[-12rem] h-[87px] px-12 flex items-center md:h-[87px] md:px-12 md:flex md:justify-between md:items-center 
+    lg:flex lg:justify-center lg:items-center lg:mt-[-1rem]
+    xl:mt-[1rem] 
+    ">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
@@ -29,7 +32,7 @@ export default function NavBar() {
       <div className="text-white font-[600] text-[18px] ml-2  md:font-[600] md:text-3xl md:ml-3">My Tinerary</div>
   
       {show ? (
-        <nav className="h-30 flex flex-col items-center md:space-x-4 md:flex-row md:items-center md:justify-between md:m-auto lg:flex lg:space-x-5">
+        <nav className="h-30 flex flex-col items-center md:space-x-4 md:flex-row md:items-center md:justify-between md:m-auto lg:flex lg:space-x-5 xl:pl-72">
           <div className="font-segoe-ui text-white text-[14px] font-[500] leading-5 flex items-center flex-col mb-0 md:font-segoe-ui md:text-white md:text-lg md:font-[700] md:leading-8 md:flex md:flex-row md:items-center md:justify-between md:space-x-4 lg:flex lg:ml-80">
             {options.map(each => <Anchor key={each.to} to={each.to}>{each.title}</Anchor>)}
           </div>
