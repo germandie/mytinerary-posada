@@ -76,7 +76,8 @@ export default function CardDetail({ src, alt, text, id, p }) {
                 ))}
               </div>
             ) : (
-              <p className="xl:w-96 xl:mt-5">
+              <p className="lg:flex lg:items-center lg:justify-center
+              xl:w-96 xl:mt-5">
                 There are no itineraries enabled for this city
               </p>
             )

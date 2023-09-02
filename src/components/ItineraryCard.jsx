@@ -27,11 +27,11 @@ export default function ItineraryCard({ itinerary }) {
           className="xl:flex xl:flex-col xl:justify-center xl:items-center 
                      lg:flex lg:flex-col"
         >
-          <p className="text-xl font-semibold xl:flex xl:flex-col xl:w-24 xl:ml-5">User</p>
+          <p className="text-xl font-semibold xl:flex xl:flex-col xl:w-24 xl:ml-5 ">User</p>
           <img 
             src={itinerary.profile_picture}
             alt={itinerary.creator}
-            className="rounded-full w-12 h-12
+            className="rounded-full w-12 h-12 object-cover
       lg:rounded-full lg:w-20 lg:h-20
       xl:rounded-full xl:w-20 xl:h-20 "
           />
