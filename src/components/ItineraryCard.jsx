@@ -48,16 +48,18 @@ export default function ItineraryCard({ itinerary }) {
         
         <div className="xl:flex xl:flex-col  lg:flex lg:flex-col">
         <p className="lg:text-xl lg:font-semibold xl:text-xl xl:justify-start xl:font-semibold">Price:</p>
-        <p className="xl:text-lg xl:justify-end">{itinerary.price} billetitos</p>
-        </div>
-
-        <div className="xl:flex xl:flex-col lg:flex lg:flex-col">
-        <p className="lg:text-xl lg:font-semibold xl:text-xl xl:font-semibold">Duration:</p>
-        <p className="xl:text-lg">{itinerary.duration} horas</p>
+        <p className="xl:text-lg xl:justify-end">{"💵".repeat(itinerary.price)}</p>
         </div>
 
         
-        <div className="mt-2">
+
+        <div className="xl:flex xl:flex-col lg:flex lg:flex-col">
+        <p className="lg:text-xl lg:font-semibold xl:text-xl xl:font-semibold">Duration:</p>
+        <p className="xl:text-lg">{itinerary.duration}</p>
+        </div>
+
+        
+        <div className="flex flex-wrap mt-2">
           {itinerary.tags.map((tag) => (
             <span key={tag} className="bg-gray-200 px-2 py-1 mr-2 rounded">
               {tag}

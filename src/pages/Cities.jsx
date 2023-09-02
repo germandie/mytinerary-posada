@@ -53,8 +53,8 @@ export default function Cities() {
         </div>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 
-        md:grid-cols-3 
-        lg:grid-cols-3 
+        md:grid-cols-3 bg-[#4E4452]
+        lg:grid-cols-3 bg-[#4E4452]
         xl:grid-cols-5 bg-[#4E4452]">
           {cities.map((each) => (
             <CardCity

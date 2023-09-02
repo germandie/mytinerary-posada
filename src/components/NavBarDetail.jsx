@@ -9,7 +9,7 @@ export default function NavBar() {
    ]
 
   return (
-    <header className="mt-[-12rem] h-[87px] px-12 flex items-center md:h-[87px] md:px-12 md:flex md:justify-between md:items-center 
+    <header className="mt-[0rem] h-[87px] px-12 flex items-center md:h-[87px] md:px-12 md:flex md:justify-between md:items-center 
     lg:flex lg:justify-center lg:items-center lg:mt-[-1rem]
     xl:mt-[1rem] 
     ">
