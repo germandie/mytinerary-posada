@@ -1,10 +1,13 @@
+import ButtonCard from "./ButtonCard";
+import ContadorMeGusta from "./ContadorMeGusta";
+
 export default function ItineraryCard({ itinerary }) {
   return (
     <div
       className="text-black bg-white p-1 mb-4 shadow w-[44vw] my-3 rounded-md
     md:w-[40vw]
     lg:w-[40vw]
-    xl:w-auto xl:h-auto xl:p-2"
+    xl: xl:h-auto xl:p-2"
     >
       <h1
         className="text-xl font-bold text-center flex justify-center items-center 
@@ -17,34 +20,39 @@ export default function ItineraryCard({ itinerary }) {
         alt={itinerary.name}
         className="mb-2 rounded-md w-full"
       />
-      <p>Likes: {itinerary.likes}</p>
+      <div className="xl:flex xl:flex-row-reverse">  <ContadorMeGusta /></div>
+      
 
       <div
         className="
       xl:flex  xl:justify-center xl:space-between xl:space-x-3"
       >{""} {/* Contenedor flex para elementos en línea  */}
+      
+    
+
+    
+
+       {/* creador,nombre y foto de perfil */}
         <div
-          className="xl:flex xl:flex-col xl:justify-center xl:items-center 
+          className="xl:flex xl:flex-col xl:justify-center xl:items-center xl:mt-[-7rem]
                      lg:flex lg:flex-col"
         >
-          <p className="text-xl font-semibold xl:flex xl:flex-col xl:w-24 xl:ml-5 ">User</p>
-          <img 
+          <p className="text-xl font-semibold xl:flex xl:flex-col xl:w-24 xl:ml-5 "></p> {/* Usuario */}
+          <img foto de perfil
             src={itinerary.profile_picture}
             alt={itinerary.creator}
-            className="rounded-full w-12 h-12 object-cover
+            className="rounded-full w-12 h-12 object-cover border-double border-4 border-sky-500
       lg:rounded-full lg:w-20 lg:h-20
-      xl:rounded-full xl:w-20 xl:h-20 "
+      xl:rounded-full xl:w-20 xl:h-20 xl:border-solid xl:border-4 xl:border-gray-400
+"
           />
 
           <h2 className="text-gray-700 text-xl font-semibold xl:flex xl:flex-col">
             {itinerary.creator}
           </h2>
         </div>
-        <div className="flex items-center mb-2">
-          {/* Aquí puedes mostrar los billetitos o íconos alusivos según el valor de price */}
-          {/* Puedes usar un componente de ícono o imágenes para representar los billetitos */}
-          {/* Por ejemplo, para price = 3, puedes mostrar tres billetitos */}
-        </div>
+        
+        
         
         <div className="xl:flex xl:flex-col  lg:flex lg:flex-col">
         <p className="lg:text-xl lg:font-semibold xl:text-xl xl:justify-start xl:font-semibold">Price:</p>
@@ -67,7 +75,10 @@ export default function ItineraryCard({ itinerary }) {
           ))}
         </div>
       </div>
+      <div><ButtonCard /></div>
     </div>
+    
+    
   );
 }
 

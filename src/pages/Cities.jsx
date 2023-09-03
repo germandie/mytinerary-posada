@@ -46,9 +46,13 @@ export default function Cities() {
           </span>
         </div>
       </div>
+      
+
+      <main className="flex-grow">
 
       {cities.length === 0 ? (
-        <div className="h-full text-center text-gray-500 mt-4">
+        <div className="h-full text-center text-gray-500 mt-80
+        md:mt-80">
           Not found city, please type another
         </div>
       ) : (
@@ -66,7 +70,9 @@ export default function Cities() {
             />
           ))}
         </div>
+        
       )}
+      </main>
     </>
   );
 }

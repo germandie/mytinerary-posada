@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link as Anchor } from "react-router-dom";
+import backgroundImage from "/public/img/dubai3.jpg"
 
 export default function NavBar() {
   let [show, setShow] = useState(false);
@@ -12,7 +13,8 @@ export default function NavBar() {
   ]
 
   return (
-    <header className="h-[87px] px-12 flex items-center bg-gray-500 md:h-[87px] md:px-12 md:flex md:justify-between md:items-center md:bg-gray-500 lg:flex lg:justify-center lg:items-center">
+    <header className="h-[87px] px-12 flex items-center bg-gray-500 md:h-[87px] md:px-12 md:flex md:justify-between md:items-center md:bg-gray-500 lg:flex lg:justify-center lg:items-center xl:h-[12rem] "
+    style={{ backgroundImage: `url(${backgroundImage})`, backgroundRepeat: "no-repeat",backgroundPosition: "center", minWidth: "100vw" }}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
