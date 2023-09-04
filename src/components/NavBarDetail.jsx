@@ -9,9 +9,10 @@ export default function NavBar() {
    ]
 
   return (
-    <header className="mt-[0rem] h-[87px] px-12 flex items-center md:h-[87px] md:px-12 md:flex md:justify-between md:items-center 
-    lg:flex lg:justify-center lg:items-center lg:mt-[-1rem]
-    xl:mt-[1rem] 
+    <header className="mt-[-5rem] h-[87px] px-12 flex items-center 
+    md:h-[87px] md:px-12 md:flex md:justify-between md:items-center md:mt-[-7rem]
+    lg:flex lg:justify-center lg:items-center lg:mt-[-7rem] 
+    xl:mt-[-1rem]
     ">
       <svg
         xmlns="http://www.w3.org/2000/svg"

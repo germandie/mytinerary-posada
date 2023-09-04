@@ -15,7 +15,7 @@ export default function CardDetail({ src, alt, text, id, p }) {
     backgroundSize: "cover", // Ajusta el tamaño de la imagen para cubrir el contenedor
     backgroundRepeat: "no-repeat", // Evita que la imagen se repita
     backgroundPosition: "center", // Centra la imagen en el contenedor
-    minHeight: "50vh", // Establece la altura mínima para ocupar toda la pantalla
+    minHeight: "100vh", // Establece la altura mínima para ocupar toda la pantalla
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
@@ -41,9 +41,9 @@ export default function CardDetail({ src, alt, text, id, p }) {
       <h1 className="text-[6vw] font-segoe-ui text-white font-bold mb-[20px] xl:mt-auto">
         {text}
       </h1>
-      <p className="text-[1.5vw] mx-[22vw] font-segoe-ui text-white font-semibold xl:mt-auto 
-      lg:
-      xl:mb-48">
+      <p className="text-[1.5vw] mx-[22vw] font-segoe-ui text-white font-semibold  
+      lg:xl:mt-auto
+      xl:mb-48 xl:mt-auto">
         {" "}
         {p}{" "}
       </p>
@@ -59,13 +59,17 @@ export default function CardDetail({ src, alt, text, id, p }) {
       <div className="flex flex-col">
         <Anchor
           to={"/city/" + id}
-          className="w-[300px]  text-white flex flex-col md:flex md:flex-col md:items-center
+          className="  text-white flex flex-col md:flex md:flex-col 
+          md:items-center
           lg:
           xl:mt-7"
         >
-          <button className="w-auto h-12 px-8 bg-[#4F46E5] mb-5 hover:bg-[#473fde] text-white text-lg font-semibold rounded-md mt-5 md:w-40  lg:w-[17vw]  lg:m-auto lg:mt-4 xl:w-13  xl:mb-10   ">
+          <button className="w-[15.5rem] px-8 bg-[#4F46E5] mb-5 hover:bg-[#473fde] text-white text-lg font-semibold rounded-md mt-[-5rem]
+          md:w-[13rem] md:mt-[-5rem] 
+          lg:w-[20vw]  lg:m-auto lg:mt-[-5rem]
+          xl:w-13 xl:h-[3rem] xl:mb-12 xl:mt-[-9rem] ">
             <span onClick={() => setShow(!show)} className="text-[16px]">
-              {show ? "Hide" : "View Itineraries"}
+              {show ? "Hide ⬆️" : "View Itineraries ⬇️"}
             </span>
           </button> 
           {show ? (
@@ -76,7 +80,8 @@ export default function CardDetail({ src, alt, text, id, p }) {
                 ))}
               </div>
             ) : (
-              <p className="lg:flex lg:items-center lg:justify-center
+              <p className="
+              lg:flex lg:items-center lg:justify-center
               xl:w-96 xl:mt-5">
                 There are no itineraries enabled for this city
               </p>

@@ -35,7 +35,9 @@ export default function Cities() {
             name="text"
             id="text"
             onKeyUp={handlerFilter}
-            className="pl-10 py-2 pr-4 rounded-full bg-gray-100 focus:outline-none focus:ring focus:border-blue-300
+            className="pl-10 py-2 pr-4 rounded-full bg-gray-100 focus:outline-none focus:ring focus:border-blue-300 mb-3
+            md:mb-4
+            lg:mb-4
             xl:"
             placeholder="Search your city"
           />
@@ -51,14 +53,16 @@ export default function Cities() {
       <main className="flex-grow">
 
       {cities.length === 0 ? (
-        <div className="h-full text-center text-gray-500 mt-80
-        md:mt-80">
+        <div className="h-full text-center text-2xl text-gray-500 mt-[12rem]
+        md:mt-[14rem] md:text-2xl
+        lg:mb-12
+        xl:text-5xl">
           Not found city, please type another
         </div>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 
         md:grid-cols-3 bg-[#4E4452]
-        lg:grid-cols-3 bg-[#4E4452]
+        lg:grid-cols-3 bg-[#4E4452] 
         xl:grid-cols-5 bg-[#4E4452]">
           {cities.map((each) => (
             <CardCity

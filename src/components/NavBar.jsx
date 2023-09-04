@@ -14,14 +14,14 @@ export default function NavBar() {
 
   return (
     <header className="h-[87px] px-12 flex items-center bg-gray-500 md:h-[87px] md:px-12 md:flex md:justify-between md:items-center md:bg-gray-500 lg:flex lg:justify-center lg:items-center xl:h-[12rem] "
-    style={{ backgroundImage: `url(${backgroundImage})`, backgroundRepeat: "no-repeat",backgroundPosition: "center", minWidth: "100vw" }}>
+    style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)),url(${backgroundImage})`, backgroundRepeat: "no-repeat",backgroundPosition: "center", minWidth: "100vw",backgroundSize: "object-cover" }}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className="w-8 h-8 cursor-pointer md:cursor-pointer"
+        className="w-8 h-8 cursor-pointer md:cursor-pointer text-white"
         onClick={() => setShow(!show)}
       >
         <path
@@ -31,11 +31,17 @@ export default function NavBar() {
         />
       </svg>
   
-      <div className="text-black font-[700] text-[20px] ml-2 md:text-black md:font-[700] md:text-3xl md:ml-3">My Tinerary</div>
+      <div className="text-white font-[700] text-[20px] ml-2 
+      md:text-black md:font-[700] md:text-3xl md:ml-3 md:text-white
+      lg:text-white
+      xl:text-white">My Tinerary</div>
   
       {show ? (
         <nav className="h-30 flex flex-col items-center md:space-x-4 md:flex-row md:items-center md:justify-between md:m-auto lg:flex lg:space-x-5">
-          <div className="font-segoe-ui text-black text-[14px] font-[500] leading-5 flex items-center flex-col mb-0 md:font-segoe-ui md:text-black md:text-lg md:font-[700] md:leading-8 md:flex md:flex-row md:items-center md:justify-between md:space-x-4 lg:flex lg:ml-80">
+          <div className="font-segoe-ui text-white text-[14px] font-[500] leading-5 flex items-center flex-col mb-0 md:font-segoe-ui 
+          md:text-white md:text-lg md:font-[700] md:leading-8 md:flex md:flex-row md:items-center md:justify-between md:space-x-4 
+          lg:flex lg:ml-80 lg:text-white
+          xl:text-white">
             {options.map(each => <Anchor key={each.to} to={each.to}>{each.title}</Anchor>)}
           </div>
   

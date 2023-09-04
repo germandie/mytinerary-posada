@@ -5,9 +5,9 @@ import { Outlet } from "react-router-dom"
 export default function MainLayouts() {
   return (
     <div className="w-full min-h-screen m-auto
-    sm: bg-red
-    md: bg-gray
-    lg:bg-gray">
+    sm: bg-gray-800
+    md: bg-gray-800
+    lg:bg-gray-800">
     < NavBar/>
     <Outlet/>
     <Footer />
