@@ -37,8 +37,11 @@ export default function Home() {
    
 
 <main className="flex items-center bg-gray-300 lg:">
+
   <div className="w-full max-w-[1291px] px-[2vw] mt-[3rem] mb-[3rem] space-x-4 flex flex-col md:flex-row md:justify-center lg:flex-row lg:justify-between">
-    <div className="w-full md:w-[60%] flex flex-col items-center px-4 mt-8 space-y-4 lg:pb-8 lg:space-y-12">
+    <div className="w-full md:w-[60%] flex flex-col items-center px-4 mt-8 space-y-4 
+    lg:pb-8 lg:space-y-12
+    xl:w-1/2 xl:p-2">
       <h1 className="text-3xl font-bold text-center lg:ml-0">Popular Mytineraries</h1>
       <div className="w-full lg:flex">
         <div className="lg:w-[50%] lg:ml-4">
@@ -56,7 +59,8 @@ export default function Home() {
         </div>
       </div>
     </div>
-    <div className="lg:w-[50%] lg:ml-4 mt-4 lg:mt-0 lg:flex ">
+    <div className="lg:w-[50%] lg:ml-4 mt-4 lg:mt-0 lg:flex
+                     ">
       <Carousel data={carousel} />
     </div>
   </div>

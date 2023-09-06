@@ -39,7 +39,8 @@ export default function Carousel({data}) {
       <Arrow direction="M15.75 19.5L8.25 12l7.5-7.5" onClick={prev_slide} />
       <div className="flex w-11/12 flex-wrap justify-center mt-5
       md:grid-cols-2
-      gird lg:grid-cols-2">
+      gird lg:grid-cols-2 
+      xl:flex xl:flex-wrap xl:w-[37rem]">
         {data.slice(counter, counterTo).map((each, index) => (
           <CardPolaroid
             key={index}

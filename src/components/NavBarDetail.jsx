@@ -12,7 +12,7 @@ export default function NavBar() {
     <header className="mt-[-5rem] h-[87px] px-12 flex items-center 
     md:h-[87px] md:px-12 md:flex md:justify-between md:items-center md:mt-[-7rem]
     lg:flex lg:justify-center lg:items-center lg:mt-[-7rem] 
-    xl:mt-[-1rem]
+    xl:mt-[0rem]
     ">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -38,12 +38,15 @@ export default function NavBar() {
             {options.map(each => <Anchor key={each.to} to={each.to}>{each.title}</Anchor>)}
           </div>
   
-          <button className="flex items-center justify-center space-x-2 w-20 px-2 bg-[#4F46E5] hover:bg-[#473fde] text-white text-[14px] font-[500] rounded-md h-full lg:text-[18px] lg:h-[40px] lg:mt-auto lg:flex lg:items-center">
+          <Anchor to= "/signin">
+          <button className="flex items-center justify-center space-x-2 w-20 px-2 bg-[#4F46E5] hover:bg-[#473fde] text-white text-[14px] font-[500] rounded-md h-full lg:text-[18px] lg:h-[40px] lg:mt-auto lg:flex lg:items-center
+          xl:w-24 xl:h-13">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               fill="currentColor"
-              className="w-4 h-4  lg:w-7 lg:h-7"
+              className="w-4 h-4 lg:w-7 lg:h-7
+              xl:w-5 xl:h-5"
             >
               <path
                 fillRule="evenodd"
@@ -53,6 +56,7 @@ export default function NavBar() {
             </svg>
             <span>Login</span>
           </button>
+          </Anchor>
         </nav>
       ) : null}
   

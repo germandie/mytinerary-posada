@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link as Anchor } from "react-router-dom";
 import backgroundImage from "/public/img/dubai3.jpg"
 
+
 export default function NavBar() {
   let [show, setShow] = useState(false);
   let options = [
@@ -14,14 +15,14 @@ export default function NavBar() {
 
   return (
     <header className="h-[87px] px-12 flex items-center bg-gray-500 md:h-[87px] md:px-12 md:flex md:justify-between md:items-center md:bg-gray-500 lg:flex lg:justify-center lg:items-center xl:h-[12rem] "
-    style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)),url(${backgroundImage})`, backgroundRepeat: "no-repeat",backgroundPosition: "center", minWidth: "100vw",backgroundSize: "object-cover" }}>
+    style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)),url(${backgroundImage})`, backgroundRepeat: "no-repeat",backgroundPosition: "center", minWidth: "80vw",backgroundSize: "object-cover" }}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className="w-8 h-8 cursor-pointer md:cursor-pointer text-white"
+        className="w-8 h-8 cursor-pointer md:cursor-pointer text-white "
         onClick={() => setShow(!show)}
       >
         <path
@@ -45,12 +46,15 @@ export default function NavBar() {
             {options.map(each => <Anchor key={each.to} to={each.to}>{each.title}</Anchor>)}
           </div>
   
-          <button className="flex items-center justify-center space-x-2 w-20 px-2 bg-[#4F46E5] hover:bg-[#473fde] text-white text-[14px] font-[500] rounded-md h-full lg:text-[18px] lg:h-[40px] lg:mt-auto lg:flex lg:items-center">
+          <Anchor to= "/signin">
+          <button className="flex items-center justify-center space-x-2 w-20 px-2 bg-[#4F46E5] hover:bg-[#473fde] text-white text-[14px] font-[500] rounded-md h-full lg:text-[18px] lg:h-[40px] lg:mt-auto lg:flex lg:items-center
+          xl:w-24 xl:h-13">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               fill="currentColor"
-              className="w-4 h-4 lg:w-7 lg:h-7"
+              className="w-4 h-4 lg:w-7 lg:h-7
+              xl:w-5 xl:h-5"
             >
               <path
                 fillRule="evenodd"
@@ -60,6 +64,7 @@ export default function NavBar() {
             </svg>
             <span>Login</span>
           </button>
+          </Anchor>
         </nav>
       ) : null}
   

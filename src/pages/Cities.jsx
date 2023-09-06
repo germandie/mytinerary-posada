@@ -27,7 +27,7 @@ export default function Cities() {
 
   return (
     <>
-      <div className="flex items-center justify-center xl:mb-4">
+      <div className="flex items-center justify-center xl:mb-4 xl:mt-4">
         <div className="mx-auto mt-4 relative">
           <input
             ref={text}
