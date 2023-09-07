@@ -1,49 +1,172 @@
+
 import { useRef } from "react";
+//import Users from "../components/Users";
+import axios from "axios";
+import apiUrl from "../apiUrl";
 import { Link as Anchor } from "react-router-dom";
-//import axios from "axios";
-//import apiUrl from "../apiUrl";
+//import { useDispatch } from "react-redux";
+//import user_actions from "../store/actions/users"
+//const { read_6_users } = user_actions
 
-export default function SignIn() {
-  // const mail_signin = useRef("");
-  // const password_signin = useRef("");
 
-  // async function handleSignIn() {
-  //   let data = {
-  //     mail: mail_signin.current.value,
-  //     password: password_signin.current.value,
-  //   };
-  //   console.log(data);
-  // }
+export default function SignUp() {
+  
+
+const name = useRef()
+const lastName= useRef()
+const country = useRef()
+const photo = useRef()
+const mail = useRef()
+const password = useRef()
+
+
+async function handleSignUp(){
+  try{
+    let data = {
+      name: name.current.value,
+      lastName: lastName.current.value,
+      country: country.current.value,
+      photo: photo.current.value,
+      mail: mail.current.value,
+      password: password.current.value,
+}
+await axios.post(
+  apiUrl+'users/signup',
+  data
+)
+console.log(data);
+
+  }catch(error){
+console.log(error);
+  }
+
+}
+    
+    
+  
+
+  
 
   return (
-    <form className="flex flex-col items-center justify-center p-[20px] w-[360px] bg-white m-auto">
-      <div class="flex items-center border-b border-teal-500 py-2">
-    <input class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" type="text" placeholder="Jane Doe" aria-label="Full name"/>
-    <button class="flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 text-white py-1 px-2 rounded" type="button">
-      Sign Up
-    </button>
-    <button class="flex-shrink-0 border-transparent border-4 text-teal-500 hover:text-teal-800 text-sm py-1 px-2 rounded" type="button">
-      Cancel
-    </button>
-  </div>
+    <div className="flex justify-evenly">
+    <form className="absolute inset-y-[3vw] mt-10 left-24 flex flex-col  p-[20px] w-[35vw] bg-white m-auto">
+
+
+
+      <div className="flex-start">
+      <h1 className="font-[600] text-[1.5vw] ">Create account</h1>
+      
+      <div className="flex space-x-2">
+      <img className="w-7 object-cover" src="/img/google.png" alt="google" />
+      <img className="w-12 object-cover" src="https://www.seekpng.com/png/detail/51-516623_facebook-transparent-background-facebook-round-logo-blue-circle.png" alt="facebook" />
+      </div>
+      
+      </div>
+      
+      
+      
+      <div className="flex space-x-2">
+      <div className="mb-5 flex items-center border-b border-gray-700 py-2 w-full">
       <input
-       // ref={password_signin}
+        ref={name}
+        type="name"
+        className="appearance-none bg-transparent border-none w-1/2 text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
+        name="name"
+        id="name"
+        defaultValue=""
+        placeholder="First Name"
+      />
+      </div>
+
+
+  
+      <div className="mb-5 flex items-center border-b border-gray-700 py-2 w-full">
+      <input
+        ref={lastName}
+        type="text"
+        className="appearance-none bg-transparent border-none w-1/2 text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
+        name="lastName"
+        id="lastName"
+        defaultValue=""
+        placeholder="Last Name"
+      />
+      </div>
+      </div>
+
+
+      <div className="mb-5 flex items-center border-b border-gray-700 py-2 w-full">
+      <input
+        ref={country}
+        type="text"
+        className="appearance-none bg-transparent border-none  text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
+        name="country"
+        id="country"
+        defaultValue=""
+        placeholder="Type country"
+      />
+      </div>
+
+      <div className="mb-5 flex items-center border-b border-gray-700 py-2 w-full">
+      <input
+        ref={photo}
+        type="text"
+        className="appearance-none bg-transparent border-none  text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
+        name="photo"
+        id="photo"
+        defaultValue=""
+        placeholder="Type Photo"
+      />
+      </div>
+
+
+      <div className="mb-5 flex items-center border-b border-gray-700 py-2 w-full">
+      <input
+        ref={mail}
+        type="text"
+        className="appearance-none bg-transparent border-none  text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
+        name="mail"
+        id="mail"
+        defaultValue=""
+        placeholder="Type Mail"
+      />
+      </div>
+
+      <div className="mb-5 flex items-center border-b border-gray-700 py-2 w-full">
+      <input
+        ref={password}
         type="password"
-        className="text-center mb-[10px] bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
-        name="password_signin"
-        id="password_signin"
+        className="appearance-none bg-transparent border-none  text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
+        name="password"
+        id="password"
         defaultValue=""
         placeholder="Type Password"
       />
+      
       <input
-        type="button"
-        className="mb-[10px] w-full shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded cursor-pointer"
-        value="Sign In!"
-        //onClick={handleSignIn}
-      />
+          type="button"
+          className="mb-5 w-full shadow bg-[#4F46E5] hover:bg-[#473fde] focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded cursor-pointer"
+          value="Sign Up!"
+          onClick={handleSignUp}
+        />
+
+      </div>
       
-      
-    </form>
+      <p>
+           Already have an account?{" "}
+           <Anchor
+             className="text-[20px] font-bold text-[#4F46E5] cursor-pointer"
+             to="/signin"
+           >
+             Sign in!
+           </Anchor>
+         </p>
+      </form>
+
+    {/* <Users /> */}
+
+    </div>
     
   );
+
 }
+
