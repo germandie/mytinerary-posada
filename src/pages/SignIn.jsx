@@ -17,11 +17,11 @@ export default function SignIn() {
     dispatch(signin({data}))
   }
 
-  let user = useSelector(store=>store)
-  console.log(user);
+  let user = useSelector((store) => store);
+  //console.log(user);
 
   return (
-    <form className="absolute inset-y-[10vw] left-24 flex flex-col  p-[20px] w-[360px] bg-white m-auto
+    <form className="absolute inset-y-[10vw] left-24 mt-14 flex flex-col  p-[20px] w-1/3 bg-white m-auto
      py-2">
       
       <div className="flex-start">
@@ -32,7 +32,7 @@ export default function SignIn() {
       <input
         ref={mail_signin}
         type="text"
-        className="appearance-none bg-transparent border-none  text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
+        className="w-full appearance-none bg-transparent border-none  text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
         name="mail_signin"
         id="mail_signin"
         defaultValue=""
@@ -45,7 +45,7 @@ export default function SignIn() {
       <input
         ref={password_signin}
         type="password"
-        className="appearance-none bg-transparent border-none  text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
+        className="w-full appearance-none bg-transparent border-none  text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
         name="password_signin"
         id="assword_signin"
         defaultValue=""

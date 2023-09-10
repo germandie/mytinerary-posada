@@ -17,7 +17,7 @@ export default function ItineraryCard({ itinerary }) {
       </h1>
       <img
         src={itinerary.photo}
-        alt={itinerary.name}
+        alt={itinerary.creator}
         className="mb-2 rounded-md w-full"
       />
       <div className="flex flex-row-reverse

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link as Anchor } from "react-router-dom";
+
 import { useSelector,useDispatch } from "react-redux";
 import Display from "./Display";
 import Label from "./Label";
@@ -29,9 +29,9 @@ export default function NavBar() {
 
 
   return (
-    <header className="mt-[-7rem] h-[87px] px-12 flex items-center 
-    md:h-[87px] md:px-12 md:flex md:justify-between md:items-center md:mt-[-7rem]
-    lg:flex lg:justify-center lg:items-center lg:mt-[-8rem]
+    <header className="mt-[0rem] h-[87px] px-12 flex items-center 
+    md:h-[87px] md:px-12 md:flex md:justify-between md:items-center md:mt-[0rem]
+    lg:flex lg:justify-center lg:items-center lg:mt-[0rem] 
     xl:mt-[0rem]
     ">
       <svg
