@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { Link as Anchor } from "react-router-dom";
 import { useDispatch,useSelector} from "react-redux";
 import user_actions from "../store/actions/users";
-const{ signin }= user_actions
+const{ signin } = user_actions;
 
 export default function SignIn() {
   const mail_signin= useRef("");

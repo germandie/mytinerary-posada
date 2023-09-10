@@ -1,6 +1,7 @@
 import { Link as Anchor } from "react-router-dom"
 
 export default function Label({options}) {
+  
   return (
     <nav className="hidden h-30 items-center md:space-x-4 md:flex md:items-center md:justify-between md:m-auto lg:flex lg:space-x-5">
           <div className="font-segoe-ui text-white text-[14px] font-[500] leading-5 flex items-center flex-col mb-0 md:font-segoe-ui 

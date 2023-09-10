@@ -9,10 +9,11 @@ export default function CardPolaroid({src, alt, text}) {
     lg:flex grid lg:grid-cols-2
     ">
             <img className="rounded-md 
+            md:h-[6rem] md:w-full
             lg:h-[4rem] lg:w-full
             xl:h-[10rem] " src={src} alt={alt} />
             <p className="mt-1 text-[3vw] font-segoe-ui font-semibold
-            md: mt-2 md:text-base md:font-segoe-ui md:font-semibold">{text}</p>
+            md:m-auto md:text-base md:font-segoe-ui md:font-semibold">{text}</p>
           </div>
     )
     
