@@ -5,8 +5,8 @@ import axios from "axios";
 import apiUrl from "../apiUrl";
 import { Link as Anchor } from "react-router-dom";
 //import { useDispatch } from "react-redux";
-//import user_actions from "../store/actions/users"
-//const { read_6_users } = user_actions
+
+
 
 
 export default function SignUp() {
@@ -31,7 +31,7 @@ async function handleSignUp(){
       password: password.current.value,
 }
 await axios.post(
-  apiUrl+'users/signup',
+  apiUrl+'auth/register',
   data
 )
 console.log(data);
@@ -49,7 +49,7 @@ console.log(error);
 
   return (
     <div className="flex justify-evenly">
-    <form className="absolute inset-y-[3vw] mt-10 left-24 flex flex-col  p-[20px] w-[35vw] bg-white m-auto">
+    <form className="absolute inset-y-[3vw] mt-10 left-24 flex flex-col  p-[20px]  bg-white m-auto">
 
 
 
@@ -94,7 +94,7 @@ console.log(error);
       </div>
 
 
-      <div className="mb-5 flex items-center border-b border-gray-700 py-2 w-full">
+      {/* <div className="mb-5 flex items-center border-b border-gray-700 py-2 w-full">
       <input
         ref={country}
         type="text"
@@ -104,7 +104,28 @@ console.log(error);
         defaultValue=""
         placeholder="Type country"
       />
-      </div>
+      </div> */}
+
+      <div className="country space-x-2">
+              <label className="form-label">Country / Region</label>
+              <select
+                ref={country}
+                id="country"
+                className="form-select country-select"
+              >
+                <option value=""></option>
+                <option value="Argentina">Argentina</option>
+                <option value="Brazil">Brazil</option>
+                <option value="Uruguay">Uruguay</option>
+                <option value="USA">USA</option>
+                <option value="Italy">Italy</option>
+                <option value="Norway">Germany</option>
+                <option value="Spain">Spain</option>
+                <option value="Japan">Japan</option>
+              </select>
+            </div>
+
+
 
       <div className="mb-5 flex items-center border-b border-gray-700 py-2 w-full">
       <input

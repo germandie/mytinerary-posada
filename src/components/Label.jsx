@@ -1,7 +1,12 @@
-import { Link as Anchor } from "react-router-dom"
+import { Link as Anchor,useNavigate } from "react-router-dom"
+import { useSelector,useDispatch } from "react-redux";
+import user_actions from "../store/actions/users";
+const { signout } = user_actions
 
 export default function Label({options}) {
-  
+  const navigate = useNavigate()
+  let mail = useSelector(store=>store.users.user?.mail)
+  let dispatch = useDispatch()
   return (
     <nav className="hidden h-30 items-center md:space-x-4 md:flex md:items-center md:justify-between md:m-auto lg:flex lg:space-x-5">
           <div className="font-segoe-ui text-white text-[14px] font-[500] leading-5 flex items-center flex-col mb-0 md:font-segoe-ui 
@@ -11,7 +16,17 @@ export default function Label({options}) {
             {options.map(each => <Anchor key={each.to} to={each.to}>{each.title}</Anchor>)}
           </div>
   
-          <Anchor to= "/signin">
+          { mail?(
+  mail && <span
+  className="flex items-center justify-center space-x-2 w-20 px-2 cursor-pointer bg-[#4F46E5] hover:bg-[#473fde] text-white text-[14px] font-[500] rounded-md h-full lg:text-[18px] lg:h-[40px] lg:mt-auto lg:flex lg:items-center xl:w-24 xl:h-13"
+  onClick={()=>dispatch(signout(),navigate('/signin'))}
+>
+  Signout
+</span>
+
+  ):(
+    <>
+    <Anchor to= "/signin">
           <button className="flex items-center justify-center space-x-2 w-20 px-2 bg-[#4F46E5] hover:bg-[#473fde] text-white text-[14px] font-[500] rounded-md h-full lg:text-[18px] lg:h-[40px] lg:mt-auto lg:flex lg:items-center
           xl:w-24 xl:h-13">
             <svg
@@ -30,7 +45,11 @@ export default function Label({options}) {
             <span>Login</span>
           </button>
           </Anchor>
+    </>
+  )}
           
         </nav>
   )
 }
+
+

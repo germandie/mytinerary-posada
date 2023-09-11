@@ -46,7 +46,7 @@ export default function NavBarSignin() {
         />
       </svg>
   
-      <div className="text-white font-[600] text-[18px] ml-2  md:font-[600] md:text-3xl md:ml-3">My Tinerary -{name} </div>
+      <div className="text-white font-[600] text-[18px] ml-2  md:font-[600] md:text-3xl md:ml-3">My Tinerary - {name} </div>
   
       
       {show && <Display options={options}/>}
@@ -69,6 +69,7 @@ export default function NavBarSignin() {
   {name ? (
     <div className="flex space-x-2">
     <img className="rounded-full w-12 h-12 mx-auto" src= {photo}  alt="photo" />
+    
     <span
      className="flex items-center justify-center space-x-2 w-20 px-2 cursor-pointer bg-[#4F46E5] hover:bg-[#473fde] text-white text-[14px] font-[500] rounded-md h-full lg:text-[18px] lg:h-[40px] lg:mt-auto lg:flex lg:items-center xl:w-24 xl:h-13"
      onClick={()=>dispatch(signout())}

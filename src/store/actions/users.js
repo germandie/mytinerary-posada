@@ -26,7 +26,7 @@ const signin = createAsyncThunk(
     async(obj)=>{
         try {
             let data = await axios.post(apiUrl+'auth/signin',obj.data)
-            console.log(data);
+            //console.log(data);
             localStorage.setItem('token',data.data.response.token)
             return {
                 user: data.data.response.user,

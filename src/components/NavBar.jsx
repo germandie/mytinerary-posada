@@ -19,6 +19,7 @@ export default function NavBar() {
     
 ]
 let profile_picture = useSelector(store=>store.users.user?.photo)
+let name = useSelector(store=>store.users.user?.name)
 let dispatch = useDispatch()
 
 
@@ -56,7 +57,7 @@ const handleSignoutClick = () => {
       <div className=" hidden text-white font-[700] text-[20px] ml-2 
       md:flex md:font-[700] md:text-3xl md:ml-3 md:text-white
       lg:text-white
-      xl:text-white">My Tinerary</div>
+      xl:text-white">My Tinerary - {name} </div>
       
        
     
@@ -78,14 +79,7 @@ const handleSignoutClick = () => {
   )}
 
   {/* Mostrar el botón SIGNOUT solo si el usuario está autenticado */}
-  {isAuthenticated && (
-    <span
-      className="flex items-center justify-center space-x-2 w-20 px-2 cursor-pointer bg-[#4F46E5] hover:bg-[#473fde] text-white text-[14px] font-[500] rounded-md h-full lg:text-[18px] lg:h-[40px] lg:mt-auto lg:flex lg:items-center xl:w-24 xl:h-13"
-      onClick={handleSignoutClick}
-    >
-      SIGNOUT
-    </span>
-  )}
+  
 </div>
 
 </header>

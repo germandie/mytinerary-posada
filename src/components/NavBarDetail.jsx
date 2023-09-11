@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link as Anchor } from "react-router-dom";
+
 import { useSelector,useDispatch } from "react-redux";
 import Display from "./Display";
 import Label from "./Label";
@@ -13,7 +13,9 @@ export default function NavBar() {
     {to:"/cities", title:"Cities"}
    ]
 
+   
    let profile_picture = useSelector(store=>store.users.user?.photo)
+   let name = useSelector(store=>store.users.user?.name)
    let dispatch = useDispatch()
 
    const [isAuthenticated, setIsAuthenticated] = useState(!!profile_picture);
@@ -51,7 +53,7 @@ export default function NavBar() {
         />
       </svg>
   
-      <div className="text-white font-[600] text-[18px] ml-2  md:font-[600] md:text-3xl md:ml-3">My Tinerary </div>
+      <div className="text-white font-[600] text-[18px] ml-2  md:font-[600] md:text-3xl md:ml-3">My Tinerary - {name} </div>
   
       
       {show && <Display options={options}/>}
@@ -67,15 +69,7 @@ export default function NavBar() {
     </div>
   )}
 
-  {/* Mostrar el botón SIGNOUT solo si el usuario está autenticado */}
-  {isAuthenticated && (
-    <span
-      className="flex items-center justify-center space-x-2 w-20 px-2 cursor-pointer bg-[#4F46E5] hover:bg-[#473fde] text-white text-[14px] font-[500] rounded-md h-full lg:text-[18px] lg:h-[40px] lg:mt-auto lg:flex lg:items-center xl:w-24 xl:h-13"
-      onClick={handleSignoutClick}
-    >
-      SIGNOUT
-    </span>
-  )}
+  
 </div>
       
       
