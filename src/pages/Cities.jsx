@@ -4,9 +4,6 @@ import { useSelector,useDispatch } from "react-redux";
 import city_actions from "../store/actions/cities";
 const { read_cities } = city_actions
 
-
-
-
 export default function Cities() {
   const cities = useSelector(store=> store.cities.cities)
   const [reEffect, setreEffect] = useState(true);

@@ -83,33 +83,10 @@ export default function ItineraryCard({ itinerary }) {
           ))}
         </div>
       </div>
-      <div><ButtonCard /></div>
+      <div><ButtonCard itinerary={itinerary} /></div>
     </div>
     
     
   );
 }
 
-// export default function ItineraryCard({ itinerary }) {
-//     return (
-//       <div className="text-black bg-white p-1 mb-4 shadow w-[44vw] my-3 rounded-md md:w-[40vw] lg:w-[40vw] xl:w-[40vw] xl:p-2">
-//         <h1 className="text-xl font-semibold text-center">{itinerary.name}</h1>
-//         <img src={itinerary.photo} alt={itinerary.name} className="mb-2 rounded-md w-full" />
-//         <div className="flex items-center justify-center space-between"> {/* Contenedor flex para elementos en línea */}
-//           <h2 className="text-xl font-semibold mr-3">{itinerary.city_id.admin_id.name}</h2>
-//           <p className="text-xl flex flex-col
-
-//           xl:flex xl:flex-col">Price: {itinerary.price} billetitos</p>
-//           <p className="text-xl ml-3">Duration: {itinerary.duration} horas</p>
-//         </div>
-//         <div className="mt-2"> {/* Contenedor para etiquetas */}
-//           {itinerary.tags.map((tag) => (
-//             <span key={tag} className="bg-gray-200 px-2 py-1 mr-2 rounded">
-//               {tag}
-//             </span>
-//           ))}
-//         </div>
-//         <p className="mt-2">Likes: {itinerary.likes}</p>
-//       </div>
-//     );
-//   }

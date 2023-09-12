@@ -59,6 +59,8 @@ export default function Home() {
         </div>
       </div>
     </div>
+
+    
     <div className="lg:w-[50%] lg:ml-4 mt-4 lg:mt-0 lg:flex
                      ">
       <Carousel data={carousel} />

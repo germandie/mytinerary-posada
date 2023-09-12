@@ -7,13 +7,14 @@ export default function Display({ options }) {
 
   const navigate = useNavigate()
   let mail = useSelector(store=>store.users.user?.mail)
+  let photo = useSelector(store=>store.users.user?.photo)
   let dispatch = useDispatch()
 
 
   return (
-    <nav className="h-30 flex flex-col items-center md:space-x-4 md:flex-row md:items-center md:justify-between md:m-auto lg:flex lg:space-x-5">
+    <nav className="  h-30 flex flex-col items-center md:space-x-4 md:flex-row md:items-center md:justify-between md:m-auto lg:flex lg:space-x-5">
       <div
-        className="font-segoe-ui text-white text-[14px] font-[500] leading-5 flex items-center flex-col mb-0 md:font-segoe-ui 
+        className="  font-segoe-ui text-white text-[14px] font-[500] leading-5 flex items-center flex-col mb-0 md:font-segoe-ui 
           md:text-white md:text-lg md:font-[700] md:leading-8 md:flex md:flex-row md:items-center md:justify-between md:space-x-4 
           lg:flex lg:ml-80 lg:text-white
           xl:text-white"
@@ -26,13 +27,17 @@ export default function Display({ options }) {
       </div>
 
       { mail?(
-  mail && <span
-  className="flex items-center justify-center space-x-2 w-20 px-2 cursor-pointer bg-[#4F46E5] hover:bg-[#473fde] text-white text-[14px] font-[500] rounded-md h-full lg:text-[18px] lg:h-[40px] lg:mt-auto lg:flex lg:items-center xl:w-24 xl:h-13"
-  onClick={()=>dispatch(signout(),navigate('/signin'))}
->
-  Signout
-</span>
-
+  mail && 
+  <div className="flex items-center space-x-2 ml-2">
+  <span
+   className="flex items-center justify-center space-x-2 w-20 px-2 cursor-pointer bg-[#4F46E5] hover:bg-[#473fde] text-white text-[14px] font-[500] rounded-md h-full lg:text-[18px] lg:h-[40px] lg:mt-auto lg:flex lg:items-center xl:w-24 xl:h-13"
+   onClick={()=>dispatch(signout(),navigate('/signin'))}
+  >
+   Signout
+  </span>
+  <img className="rounded-full w-12 h-12 mx-auto object-cover" src= {photo}  alt="photo" />
+  </div>
+ 
   ):(
     <>
     <Anchor to= "/signin">

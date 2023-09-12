@@ -2,27 +2,45 @@ import { Link as Anchor,useNavigate } from "react-router-dom"
 import { useSelector,useDispatch } from "react-redux";
 import user_actions from "../store/actions/users";
 const { signout } = user_actions
+import Swal from "sweetalert2";
 
 export default function Label({options}) {
   const navigate = useNavigate()
   let mail = useSelector(store=>store.users.user?.mail)
+  let photo = useSelector(store=>store.users.user?.photo)
   let dispatch = useDispatch()
   return (
-    <nav className="hidden h-30 items-center md:space-x-4 md:flex md:items-center md:justify-between md:m-auto lg:flex lg:space-x-5">
+    <nav className=" menu-options hidden md:block h-30 items-center md:space-x-4 md:flex md:items-center md:justify-between md:m-auto  lg:space-x-5
+    xl:text-white">
           <div className="font-segoe-ui text-white text-[14px] font-[500] leading-5 flex items-center flex-col mb-0 md:font-segoe-ui 
           md:text-white md:text-lg md:font-[700] md:leading-8 md:flex md:flex-row md:items-center md:justify-between md:space-x-4 
-          lg:flex lg:ml-80 lg:text-white
-          xl:text-white">
+          lg:flex lg:items-center lg:justify-center lg:ml-80 lg:text-white
+          ">
             {options.map(each => <Anchor key={each.to} to={each.to}>{each.title}</Anchor>)}
           </div>
   
           { mail?(
-  mail && <span
-  className="flex items-center justify-center space-x-2 w-20 px-2 cursor-pointer bg-[#4F46E5] hover:bg-[#473fde] text-white text-[14px] font-[500] rounded-md h-full lg:text-[18px] lg:h-[40px] lg:mt-auto lg:flex lg:items-center xl:w-24 xl:h-13"
-  onClick={()=>dispatch(signout(),navigate('/signin'))}
+  mail && 
+ <div className="flex space-x-2">
+<span
+ className="flex items-center justify-center space-x-2 w-20 px-2 cursor-pointer bg-[#4F46E5] hover:bg-[#473fde] text-white text-[14px] font-[500] rounded-md h-full lg:text-[18px] lg:h-[40px] lg:mt-auto lg:flex lg:items-center xl:w-24 xl:h-13"
+ onClick={()=>dispatch(signout(),navigate('/signin'),
+ Swal.fire({
+  icon: "success",
+  title: "Unlogged!",
+})
+ 
+ 
+ 
+ )
+ 
+}
+ 
 >
-  Signout
+ Signout
 </span>
+<img className="rounded-full w-12 h-12 mx-auto object-cover" src= {photo}  alt="photo" />
+</div>
 
   ):(
     <>

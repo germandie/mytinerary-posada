@@ -14,7 +14,7 @@ export default function NavBarSignin() {
    ]
 
    let name = useSelector(store=>store.users.user?.name)
-   let photo = useSelector(store=>store.users.user?.photo)
+   //let photo = useSelector(store=>store.users.user?.photo)
    console.log(name)
    let dispatch = useDispatch()
 
@@ -27,7 +27,7 @@ export default function NavBarSignin() {
     <header className="mt-[0rem] h-[87px] px-12 flex items-center 
     md:h-[87px] md:px-12 md:flex md:justify-between md:items-center md:mt-[0rem]
     lg:flex lg:justify-center lg:items-center lg:mt-[0rem] 
-    xl:mt-[0rem]
+    xl:mt-[0rem] xl:flex xl:items-center
     ">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -48,8 +48,10 @@ export default function NavBarSignin() {
   
       <div className="text-white font-[600] text-[18px] ml-2  md:font-[600] md:text-3xl md:ml-3">My Tinerary - {name} </div>
   
-      
+     
       {show && <Display options={options}/>}
+      
+      
 
       <Label options={options} />
   
@@ -65,7 +67,7 @@ export default function NavBarSignin() {
      </div> */}
 
 
-<div className="flex items-center space-x-2">
+{/* <div className="flex items-center space-x-2">
   {name ? (
     <div className="flex space-x-2">
     <img className="rounded-full w-12 h-12 mx-auto" src= {photo}  alt="photo" />
@@ -95,7 +97,7 @@ export default function NavBarSignin() {
     </svg>
   )}
   
-</div>
+</div> */}
 
      
 

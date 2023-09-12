@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { Link as Anchor, useNavigate } from "react-router-dom";
-import { useDispatch,useSelector} from "react-redux";
+import { useDispatch} from "react-redux";
 import user_actions from "../store/actions/users";
 import Swal from "sweetalert2";
 const{ signin } = user_actions;
@@ -40,12 +40,13 @@ export default function SignIn() {
     .catch((err) => console.log(err));
   }
 
-  let user = useSelector((store) => store);
+  //let user = useSelector((store) => store);
+  //let user = useSelector(store=>store.users);
   //console.log(user);
 
   return (
     <form className="absolute inset-y-[10vw] left-24 mt-14 flex flex-col  p-[20px] w-1/3 bg-white m-auto
-     py-2">
+     py-2 rounded bg-opacity-70">
       
       <div className="flex-start">
       <h1 className="font-[600] text-[1.5vw] ">Sign In!</h1>

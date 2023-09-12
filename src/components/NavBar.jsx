@@ -18,20 +18,20 @@ export default function NavBar() {
 
     
 ]
-let profile_picture = useSelector(store=>store.users.user?.photo)
+//let profile_picture = useSelector(store=>store.users.user?.photo)
 let name = useSelector(store=>store.users.user?.name)
 let dispatch = useDispatch()
 
 
 
-const [isAuthenticated, setIsAuthenticated] = useState(!!profile_picture);
-const handleSignoutClick = () => {
-  // Realizar acciones de cierre de sesión aquí
-  dispatch(signout());
+// const [isAuthenticated, setIsAuthenticated] = useState(!!profile_picture);
+// const handleSignoutClick = () => {
+//   // Realizar acciones de cierre de sesión aquí
+//   dispatch(signout());
 
-  // Actualizar el estado local para reflejar que el usuario está deslogueado
-  setIsAuthenticated(false);
-};
+//   // Actualizar el estado local para reflejar que el usuario está deslogueado
+//   setIsAuthenticated(false);
+// };
 
 
 
@@ -61,26 +61,20 @@ const handleSignoutClick = () => {
       
        
     
-  
-      {show && <Display options={options}/>}
+   {/* <div className="flex justify-center items-center ml-auto">
+   {show && <Display options={options}/>}
 
-      <Label options={options} />
+ <Label options={options} />
+   </div> */}
+      
+  {show && <Display options={options}/>}
+   
+
+    <Label options={options} />
 
       
+    
 
-      
-
-<div className="flex flex-col justify-center items-center ml-auto">
-  {/* Mostrar la imagen del perfil solo si el usuario está autenticado */}
-  {isAuthenticated && (
-    <div className="mb-4">
-      <img className="rounded-full w-12 h-12 mx-auto" src={profile_picture} alt="photo" />
-    </div>
-  )}
-
-  {/* Mostrar el botón SIGNOUT solo si el usuario está autenticado */}
-  
-</div>
 
 </header>
   );

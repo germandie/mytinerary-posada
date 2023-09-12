@@ -90,6 +90,32 @@ const signout = createAsyncThunk(
     }
 )
 
+
+
+
+
+const register = createAsyncThunk(
+    'register',
+    async(obj)=>{
+        try {
+            let data = await axios.post(apiUrl+'auth/register',obj.data)
+            //console.log(data);
+            localStorage.setItem('token',data.data.response)
+            return {
+                user: data.data.response.user,
+                token: data.data.response,
+                messages: []
+            }
+        } catch (error) {
+            console.log(error);
+            return {
+                user: {},
+                token: '',
+                messages: error.response.data.messages || [error.response.data.message]
+            }
+        }
+    }
+)
 // const update_user = createAsyncThunk(
 //     'update_user',
 //     async(obj)=> {
@@ -111,5 +137,5 @@ const signout = createAsyncThunk(
 //     }
 // )
 
-const user_actions = { read_6_users, signin, signin_token, signout }
+const user_actions = { read_6_users, signin, signin_token, signout, register }
 export default user_actions
