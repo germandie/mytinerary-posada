@@ -83,16 +83,17 @@ dispatch(register({ data }))
 
   return (
     <div className="flex justify-evenly">
-    <form className="  absolute inset-y-[3vw] mt-10 left-24 flex flex-col w-1/2 p-[20px]  bg-white m-auto rounded bg-opacity-70">
+    <form className="  absolute inset-y-[3vw] mt-10 left-24 flex flex-col w-1/2 p-[20px]  bg-white m-auto rounded bg-opacity-70
+    xl:w-[34vw]">
 
 
 
       <div className="flex-start">
       <h1 className="font-[600] text-[1.5vw] ">Create account</h1>
       
-      <div className="flex space-x-2">
+      <div className="flex space-x-3">
       <img className="w-7 object-cover" src="/img/google.png" alt="google" />
-      <img className="w-12 object-cover" src="https://www.seekpng.com/png/detail/51-516623_facebook-transparent-background-facebook-round-logo-blue-circle.png" alt="facebook" />
+      <img className="w-7 object-cover" src="/img/pngwing.com.png" alt="facebook" />
       </div>
       
       </div>
@@ -100,7 +101,7 @@ dispatch(register({ data }))
       
       
       <div className="flex space-x-2">
-      <div className="mb-5 flex items-center border-b border-gray-700 py-2 w-full">
+      <div className="mb-5 flex items-center border-b border-gray-500 py-2 w-full">
       <input
         ref={name}
         type="name"
@@ -114,7 +115,7 @@ dispatch(register({ data }))
 
 
   
-      <div className="mb-5 flex items-center border-b border-gray-700 py-2 w-full">
+      <div className="mb-5 flex items-center border-b border-gray-500 py-2 w-full">
       <input
         ref={lastName}
         type="text"
@@ -151,7 +152,7 @@ dispatch(register({ data }))
 
 
 
-      <div className="mb-5 flex items-center border-b border-black py-2 w-full">
+      <div className="mb-5 flex items-center border-b border-gray-500 py-2 w-full">
       <input
         ref={photo}
         type="text"
@@ -164,7 +165,7 @@ dispatch(register({ data }))
       </div>
 
 
-      <div className="mb-5 flex items-center border-b border-gray-700 py-2 w-full">
+      <div className="mb-5 flex items-center border-b border-gray-500 py-2 w-full">
       <input
         ref={mail}
         type="text"
@@ -176,7 +177,7 @@ dispatch(register({ data }))
       />
       </div>
 
-      <div className="mb-5 flex items-center border-b border-gray-700 py-2 w-full">
+      <div className="mb-5 flex items-center border-b border-gray-500 py-2 w-full">
       <input
         ref={password}
         type="password"

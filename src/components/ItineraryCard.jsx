@@ -17,7 +17,7 @@ export default function ItineraryCard({ itinerary }) {
       </h1>
       <img
         src={itinerary.photo}
-        alt={itinerary.creator}
+        alt= {itinerary.creator}
         className="mb-2 rounded-md w-full"
       />
       <div className="flex flex-row-reverse
@@ -76,8 +76,8 @@ export default function ItineraryCard({ itinerary }) {
 
         
         <div className="flex flex-wrap mt-2">
-          {itinerary.tags.map((tag) => (
-            <span key={tag} className="bg-gray-400 px-2 py-1 mr-2 mb-1 rounded">
+          {itinerary.tags.map((tag,index) => (
+            <span key={index} className="bg-gray-400 px-2 py-1 mr-2 mb-1 rounded">
               {tag}
             </span>
           ))}

@@ -3,7 +3,8 @@ import { Link as Anchor } from "react-router-dom";
 import NavBarDetail from "./NavBarDetail";
 import { useDispatch, useSelector } from "react-redux";
 import itinerary_actions from "../store/actions/itineraries";
-import ItineraryCard from "./ItineraryCard"; // Importa el componente ItineraryCard
+import ItineraryCard from "./ItineraryCard"; 
+import ReturnToCities from "../components/ReturnToCities";
 
 const { read_itineraries_from_city } = itinerary_actions;
 
@@ -57,6 +58,12 @@ export default function CardDetail({ src, alt, text, id, p }) {
       lg:bg-[#4E4452] lg:flex lg:flex-col lg:justify-center lg:items-center 
       xl:bg-[#4E4452] xl:flex xl:flex-col xl:justify-center xl:items-center">
       <div className="flex flex-col">
+
+      <div className="absolute left-0 top-72 w-16
+      xl:absolute xl:left-0 xl:top-96">
+      <ReturnToCities />
+      </div>
+        
         <Anchor
           to={"/city/" + id}
           className="  text-white flex flex-col md:flex md:flex-col 
@@ -72,6 +79,9 @@ export default function CardDetail({ src, alt, text, id, p }) {
               {show ? "Hide ⬆️" : "View Itineraries ⬇️"}
             </span>
           </button> 
+                 
+                 
+
           {show ? (
             itineraries.length > 0 ? (
               <div className="p-0 flex flex-col justify-center items-center md: lg: xl:flex xl:flex-col xl:justify-center xl:items-center">

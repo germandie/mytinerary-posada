@@ -5,6 +5,7 @@ import city_actions from "../store/actions/cities";
 const { read_city } = city_actions;
 import CardDetail from "../components/CardDetail";
 
+
 export default function CityDetail() {
   const { city_id } = useParams();
   const dispatch = useDispatch();
